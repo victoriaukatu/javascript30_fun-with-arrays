@@ -94,7 +94,19 @@
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
+    // obj will the object that contains each mode of transportation and its total
+    // vehicle is each item as it loops through data array
+    // the if statement is checking if that vehicle type is in our object yet, if not it gets added
+    // each time that vehicle is encountered it will add 1 to the total in the object
+    // return the object containing the totals for each transportation mode
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    const transportation = data.reduce((obj, vehicle) => {
+    if(!obj[vehicle]){
+      obj[vehicle] = 0;
+    }
+    obj[vehicle]++
+    return obj;
+    }, {});
 
   </script>
 </body>

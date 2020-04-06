@@ -44,11 +44,19 @@
     // 3. Sort the inventors by birthdate, oldest to youngest
     // For sort method we can call the two options a and b or whatever you want. The 1 and -1 is telling the function, based on whether the
     // a and b comparison is true, shift the position of a up or b up accordingly 
+    // We're using the ternary operator here (it's conditional)
     const sortedInventors = inventors.sort((a,b) => a.year > b.year ? 1 : -1);
     console.table(sortedInventors);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+    // This is the same as doing a for loop and having totalYears += but this is a cleaner way
+    // total is where the current amount is stored as the reduce function is running
+    // We put a zero there because the first time through there's no total yet
+    const totalYears = inventors.reduce((total, inventor) => {
+      return total + (inventor.passed - inventor.year);
+    }, 0)
+    console.log(totalYears);
 
     // 5. Sort the inventors by years lived
 

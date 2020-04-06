@@ -72,14 +72,25 @@
     // .mw-category is the div class on the Wiki page that contains the list of boulevards
     // Array.from turns it into an array (since querySelector yields a Nodelist) and we want to use array methods 
     // We use map to turn the array of hyperlinks into plain text
-    const category = document.querySelector('.mw-category');
-    const links = Array.from(category.querySelectorAll('a'));
-    const de = links 
-                .map(link => link.textContent)
-                .filter(streetName => streetName.includes('de'));
+    // const category = document.querySelector('.mw-category');
+    // const links = Array.from(category.querySelectorAll('a'));
+    // const de = links 
+    //             .map(link => link.textContent)
+    //             .filter(streetName => streetName.includes('de'));
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    // Remember, with sort with pass in a and b, or whatever you want to call them
+    // Since each of the first/last name combos has a comma and space, that's where we split them
+    // Splitting gives us the first and last name as two items in individual arrays for each person
+    // setting it equal to [last, first] is called destructuring
+    // This means that the array contents are set equal to the variables last and first, no longer in array format
+    const alphabetize = people.sort((lastOne, nextOne) => {
+      const [aLast, aFirst] = lastOne.split(', ');
+      const [bLast, bFirst] = nextOne.split(', ');
+      return aLast > bLast ? 1: -1;
+    });
+    console.log(alphabetize);
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these

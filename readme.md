@@ -2,7 +2,7 @@
 
 Grab the course at [https://JavaScript30.com](https://JavaScript30.com)
 
-![](https://javascript30.com/images/JS3-social-share.png)
+![](arrays.jpg)
 
-SUMMARY:
+SUMMARY: This exercise was a good opportunity to go through and practice different array methods. Practice makes perfect, so getting some more reps with these was beneficial for me!
 
